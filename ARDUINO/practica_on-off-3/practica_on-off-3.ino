@@ -14,7 +14,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  while(serial.available()==0)
+  if (Serial.available()==0)
   char opcion = Serial.read();
 
   if (opcion=='1')
@@ -47,7 +47,7 @@ void loop() {
             digitalWrite(LedVerde,LOW);
             digitalWrite(Motor,LOW);
             }else{
-              Serial.println("ha ocurrido un error en el ingreso del dato")
+              Serial.println("ha ocurrido un error en el ingreso del dato");
             }
           }
         }
